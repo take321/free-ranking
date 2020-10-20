@@ -10,10 +10,10 @@
 
 ### Association
 
-- has_many :rankings
+- has_many :ranks
 - has_many :comments
 
-## rankings テーブル
+## ranks テーブル
 
 | Column                | Type    | Options     |
 | --------------------- | ------- | ----------- |
@@ -24,11 +24,11 @@
 
 ### Association
 
-- has_many :ranks
+- has_many :rank_numbers
 - has_many :comments
 - belongs_to :user
 
-## ranks テーブル
+## rank_numbers テーブル
 
 | Column                | Type    | Options     |
 | --------------------- | ------- | ----------- |
@@ -39,7 +39,7 @@
 
 ### Association
 
-- belongs_to :ranking
+- belongs_to :rank
 
 ## comments テーブル
 
@@ -51,5 +51,5 @@
 
 ### Association
 
-- belongs_to :ranking
+- belongs_to :rank
 - belongs_to :user
