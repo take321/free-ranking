@@ -19,7 +19,7 @@
 | --------------------- | ------- | ----------- |
 | title                 | string  | null: false |
 | text                  | string  |             |
-| genre_id              | integer |             |
+| category_id           | integer |             |
 | user_id               | integer | null: false |
 
 ### Association
@@ -27,7 +27,6 @@
 - has_many :ranks
 - has_many :comments
 - belongs_to :user
-- belongs_to :genre
 
 ## ranks テーブル
 
@@ -54,19 +53,3 @@
 
 - belongs_to :ranking
 - belongs_to :user
-
-## genres テーブル  
-
-| Column                | Type    | Options     |
-| --------------------- | ------- | ----------- |
-|                       | integer | null: false |
-|                       | integer | null: false |
-|                       | integer | null: false |
-|                       | integer | null: false |
-|                       | integer | null: false |
-|                       | integer | null: false |
-
-<!-- カラムがありすぎるので後回し -->
-### Association
-
-- has_many :rankings
