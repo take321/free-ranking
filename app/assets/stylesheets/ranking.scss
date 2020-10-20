@@ -1,3 +1,87 @@
-// Place all the styles related to the ranking controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+// ヘッダー
+
+.header{
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: bisque;
+}
+.header_icon{
+  margin: 5px;
+  font-size: 21px;
+  color: black;
+  font-weight: bold;
+  text-decoration:none;
+}
+
+.devise{
+  width: 170px;
+  margin: 15px;
+  display:flex;
+  justify-content: space-between;
+}
+.devise_button{
+  color: #000;
+  padding: 5px;
+  font-size: 85%;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.devise_button:hover{
+  letter-spacing: 2.2px;
+  transition:all 0.5s ease;
+}
+
+.header_border{
+  background-color: lightgray;
+  height: 2px;
+}
+// フッター
+.footer{
+  height: 50px;
+  background-color: #dcdcdc;
+  color:#fff;
+  line-height: 52px;
+  text-align: center;
+}
+
+// ランキング一覧画面（ルートパス）
+
+.main{
+  display: flex;
+  height: calc(100vh - 120px);
+}
+.ranking_list{
+  padding-top: 40px;
+  width: 70vw;
+}
+.ranking{
+  height: 130px;
+  border: 1px solid black;
+  margin-top: 20px;
+  display: flex;
+}
+.ranking-img{
+  height: 100%;
+  width: 130px;
+  border: 1px solid black;
+}
+
+.ranking-box{
+  width: calc(100% - 130px);
+}
+
+.ranking-title{
+  height: 50px;
+  border-bottom: 1px solid black;
+}
+.comment{}
+.day{}
+.belong_genre{}
+.genre_list{
+  width: 30vw;
+  background-color: hotpink;
+}
+.genre{}
