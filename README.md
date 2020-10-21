@@ -35,7 +35,7 @@
 | rank_number           | integer | null: false |
 | title                 | string  | null: false |
 | text                  | string  |             |
-| ranking_id            | integer | null: false |
+| rank_id               | integer | null: false |
 
 ### Association
 
@@ -47,7 +47,7 @@
 | --------------------- | ------- | ----------- |
 | text                  | string  | null: false |
 | user_id               | integer | null: false |
-| ranking_id            | integer | null: false |
+| rank_id               | integer | null: false |
 
 ### Association
 

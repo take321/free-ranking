@@ -1,10 +1,23 @@
-<div class="contents row">
-  <div class="container">
-    <%= form_with(model: @ranking, local: true) do |form| %>
-      <h3>投稿する</h3>
-      <%= form.text_field :image, placeholder: "Image Url"%>
-      <%= form.text_area :text, placeholder: "text", rows: "10" %>
-      <%= form.submit "SEND" %>
-    <% end %>
-  </div>
+<div class="new-html">
+  <h1>あなただけのランキングを作りましょう！！</h1>
+  <p>まずはランキングのタイトルと説明を決めてこのランキングのキャッチコピーを決めましょう</p>
+  <%= form_with(model: @ranking, local: true) do |f| %>
+    <div class="new-ranking-title">
+      <p>ランキングのタイトル</p>
+      <%= f.text_area :title, class:"ranking-title", maxlength:"40" %>
+    </div>
+    <div class="new-ranking-text">
+      <p>ランキングの説明</p>
+      <%= f.text_area :text, rows: "5" %>
+    </div>
+    <div class="new-ranking-category">
+      <p>ランキングのカテゴリー</p>
+      <%# プルダウン %>
+    </div>
+    <div class="new-ranking-number-make">
+      <p>ランキングは何位まで作りますか？</p>
+      <%# プルダウン %>
+    </div>
+      <%= f.submit "次へ進む" ,class:"next" %>
+  <% end %>
 </div>
