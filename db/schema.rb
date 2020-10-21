@@ -14,9 +14,9 @@ ActiveRecord::Schema.define(version: 2020_10_21_030559) do
 
   create_table "rank_numbers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "rank_number_id", null: false
-    t.string "title", null: false
-    t.string "text"
-    t.integer "rank_id", null: false
+    t.string "rank_title", null: false
+    t.string "rank_text"
+    t.integer "rank_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

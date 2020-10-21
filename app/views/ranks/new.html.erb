@@ -12,11 +12,11 @@
     </div>
     <div class="new-ranking-category">
       <p>ランキングのカテゴリー</p>
-      <%# プルダウン %>
+       <%= f.collection_select :category_id, CategoryId.all, :id, :name, {} %>
     </div>
     <div class="new-ranking-number-make">
       <p>ランキングは何位まで作りますか？</p>
-      <%# プルダウン %>
+      <%= f.collection_select :rank_number_id, RankNumberId.all, :id, :name, {} %>
     </div>
 
 
@@ -27,41 +27,12 @@
       <div class="ranks_form">
         <div class="ranks_name">
         <p>名前</p>
-        <%= f.text_area :title %>
+        <%= f.text_area :rank_title %>
         </div>
         <div class="ranks_text">
         <p>説明</p>
-        <%= f.text_area :text %>
-      </div>
-    </div>
-
-    <div class="ranks_new">
-      <div class="rank">
-      <p>1位</p>
-      </div>
-      <div class="ranks_form">
-        <div class="ranks_name">
-        <p>名前</p>
-        <%= f.text_area :title %>
-        </div>
-        <div class="ranks_text">
-        <p>説明</p>
-        <%= f.text_area :text %>
-      </div>
-    </div>
-
-    <div class="ranks_new">
-      <div class="rank">
-      <p>1位</p>
-      </div>
-      <div class="ranks_form">
-        <div class="ranks_name">
-        <p>名前</p>
-        <%= f.text_area :title %>
-        </div>
-        <div class="ranks_text">
-        <p>説明</p>
-        <%= f.text_area :text %>
+        <%= f.text_area :rank_text %>
+        <%= f.text_area :rank_number_id, value: 1 %>
       </div>
     </div>
 

@@ -33,9 +33,9 @@
 | Column                | Type    | Options     |
 | --------------------- | ------- | ----------- |
 | rank_number_id        | integer | null: false |
-| title                 | string  | null: false |
-| text                  | string  |             |
-| rank_id               | integer | null: false |
+| rank_title            | string  | null: false |
+| rank_text             | string  |             |
+| rank_id               | integer |             |
 
 ### Association
 
