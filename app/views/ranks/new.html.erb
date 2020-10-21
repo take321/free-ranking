@@ -1,6 +1,6 @@
 <div class="new-html">
   <h1>あなただけのランキングを作りましょう！！</h1>
-  <p>まずはランキングのタイトルと説明を決めてこのランキングのキャッチコピーを決めましょう</p>
+  <p>まずはランキングのタイトルと説明を決めてこのランキングのキャッチコピーを決めましょう！！</p>
   <%= form_with(model: @ranking, local: true) do |f| %>
     <div class="new-ranking-title">
       <p>ランキングのタイトル</p>
@@ -18,6 +18,54 @@
       <p>ランキングは何位まで作りますか？</p>
       <%# プルダウン %>
     </div>
-      <%= f.submit "次へ進む" ,class:"next" %>
+
+
+    <div class="ranks_new">
+      <div class="rank">
+      <p>1位</p>
+      </div>
+      <div class="ranks_form">
+        <div class="ranks_name">
+        <p>名前</p>
+        <%= f.text_area :title %>
+        </div>
+        <div class="ranks_text">
+        <p>説明</p>
+        <%= f.text_area :text %>
+      </div>
+    </div>
+
+    <div class="ranks_new">
+      <div class="rank">
+      <p>1位</p>
+      </div>
+      <div class="ranks_form">
+        <div class="ranks_name">
+        <p>名前</p>
+        <%= f.text_area :title %>
+        </div>
+        <div class="ranks_text">
+        <p>説明</p>
+        <%= f.text_area :text %>
+      </div>
+    </div>
+
+    <div class="ranks_new">
+      <div class="rank">
+      <p>1位</p>
+      </div>
+      <div class="ranks_form">
+        <div class="ranks_name">
+        <p>名前</p>
+        <%= f.text_area :title %>
+        </div>
+        <div class="ranks_text">
+        <p>説明</p>
+        <%= f.text_area :text %>
+      </div>
+    </div>
+
+    
+      <%= f.submit "登録する" ,class:"next" %>
   <% end %>
 </div>

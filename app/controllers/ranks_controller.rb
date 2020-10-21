@@ -9,12 +9,6 @@ class RanksController < ApplicationController
   end
 
   def create
-    @ranking = Rank.new(ranking_params)
-    if @ranking.valid?
-      render 'rank_numbers/new'
-    else
-      render :new
-    end
   end
 
 
