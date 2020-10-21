@@ -32,7 +32,7 @@
 
 | Column                | Type    | Options     |
 | --------------------- | ------- | ----------- |
-| rank_number           | integer | null: false |
+| rank_number_id        | integer | null: false |
 | title                 | string  | null: false |
 | text                  | string  |             |
 | rank_id               | integer | null: false |
