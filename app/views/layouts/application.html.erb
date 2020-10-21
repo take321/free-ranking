@@ -12,10 +12,18 @@
   <body>
      <header class="header">
       <%= link_to "free ranking", root_path, class: "header_icon"%>
-      <div class="devise">
-        <%= link_to "ログイン", new_user_session_path, class: "devise_button" %>
-        <%= link_to "新規登録", new_user_registration_path, class: "devise_button" %>
-      </div>
+      <% if user_signed_in? %>
+        <div class="devise">
+        <span><%= current_user.nickname %></span>
+          <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+          <%= link_to "投稿する", new_tweet_path, class: "post" %>
+        </div>
+      <% else %>
+        <div class="devise">
+          <%= link_to "ログイン", new_user_session_path, class: "devise_button" %>
+          <%= link_to "新規登録", new_user_registration_path, class: "devise_button" %>
+        </div>
+      <% end %>
     </header>
     <div class="header_border">
     </div>
