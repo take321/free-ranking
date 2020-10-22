@@ -1,7 +1,7 @@
 <div class="new-html">
   <h1>あなただけのランキングを作りましょう！！</h1>
   <p>まずはランキングのタイトルと説明を決めてこのランキングのキャッチコピーを決めましょう！！</p>
-  <%= form_with(model: @ranking, local: true) do |f| %>
+  <%= form_with(model: @ranking, url: ranks_path, local: true) do |f| %>
     <div class="new-ranking-title">
       <p>ランキングのタイトル</p>
       <%= f.text_area :title, class:"ranking-title", maxlength:"40" %>
@@ -16,27 +16,172 @@
     </div>
     <div class="new-ranking-number-make">
       <p>ランキングは何位まで作りますか？</p>
-      <%= f.collection_select :rank_number_id, RankNumberId.all, :id, :name, {} %>
+      <%= f.collection_select :rank_number_ids, RankNumberId.all, :id, :name, {} %>
     </div>
 
 
-    <div class="ranks_new">
-      <div class="rank">
-      <p>1位</p>
-      </div>
-      <div class="ranks_form">
-        <div class="ranks_name">
-        <p>名前</p>
-        <%= f.text_area :rank_title %>
+    <%= f.fields_for :rank_numbers do |i| %>
+      <div class="ranks_new">
+        <div class="rank">
+        <p>1位</p>
         </div>
-        <div class="ranks_text">
-        <p>説明</p>
-        <%= f.text_area :rank_text %>
-        <%= f.text_area :rank_number_id, value: 1 %>
+        <div class="ranks_form">
+          <div class="ranks_name">
+          <p>名前</p>
+          <%= i.text_area :rank_title1 %>
+          </div>
+          <div class="ranks_text">
+          <p>説明</p>
+          <%= i.text_area :rank_text1 %>
+          <%= i.hidden_field :rank_number_id1, value: 1 %>
+        </div>
       </div>
-    </div>
 
+      <div class="ranks_new">
+        <div class="rank">
+        <p>2位</p>
+        </div>
+        <div class="ranks_form">
+          <div class="ranks_name">
+          <p>名前</p>
+          <%= i.text_area :rank_title2 %>
+          </div>
+          <div class="ranks_text">
+          <p>説明</p>
+          <%= i.text_area :rank_text2 %>
+          <%= i.hidden_field :rank_number_id2, value: 2 %>
+        </div>
+      </div>
+
+      <div class="ranks_new">
+        <div class="rank">
+        <p>3位</p>
+        </div>
+        <div class="ranks_form">
+          <div class="ranks_name">
+          <p>名前</p>
+          <%= i.text_area :rank_title3 %>
+          </div>
+          <div class="ranks_text">
+          <p>説明</p>
+          <%= i.text_area :rank_text3 %>
+          <%= i.hidden_field :rank_number_id3, value: 3 %>
+        </div>
+      </div>
+
+      <div class="ranks_new">
+        <div class="rank">
+        <p>4位</p>
+        </div>
+        <div class="ranks_form">
+          <div class="ranks_name">
+          <p>名前</p>
+          <%= i.text_area :rank_title4 %>
+          </div>
+          <div class="ranks_text">
+          <p>説明</p>
+          <%= i.text_area :rank_text4 %>
+          <%= i.hidden_field :rank_number_id4, value: 4 %>
+        </div>
+      </div>
+
+      <div class="ranks_new">
+        <div class="rank">
+        <p>5位</p>
+        </div>
+        <div class="ranks_form">
+          <div class="ranks_name">
+          <p>名前</p>
+          <%= i.text_area :rank_title5 %>
+          </div>
+          <div class="ranks_text">
+          <p>説明</p>
+          <%= i.text_area :rank_text5 %>
+          <%= i.hidden_field :rank_number_id5, value: 5 %>
+        </div>
+      </div>
     
-      <%= f.submit "登録する" ,class:"next" %>
+      <div class="ranks_new">
+        <div class="rank">
+        <p>6位</p>
+        </div>
+        <div class="ranks_form">
+          <div class="ranks_name">
+          <p>名前</p>
+          <%= i.text_area :rank_title6 %>
+          </div>
+          <div class="ranks_text">
+          <p>説明</p>
+          <%= i.text_area :rank_text6 %>
+          <%= i.hidden_field :rank_number_id6, value: 6 %>
+        </div>
+      </div>
+
+      <div class="ranks_new">
+        <div class="rank">
+        <p>7位</p>
+        </div>
+        <div class="ranks_form">
+          <div class="ranks_name">
+          <p>名前</p>
+          <%= i.text_area :rank_title7 %>
+          </div>
+          <div class="ranks_text">
+          <p>説明</p>
+          <%= i.text_area :rank_text7 %>
+          <%= i.hidden_field :rank_number_id7, value: 7 %>
+        </div>
+      </div>
+
+      <div class="ranks_new">
+        <div class="rank">
+        <p>8位</p>
+        </div>
+        <div class="ranks_form">
+          <div class="ranks_name">
+          <p>名前</p>
+          <%= i.text_area :rank_title8 %>
+          </div>
+          <div class="ranks_text">
+          <p>説明</p>
+          <%= i.text_area :rank_text8 %>
+          <%= i.hidden_field :rank_number_id8, value: 8 %>
+        </div>
+      </div>
+
+      <div class="ranks_new">
+        <div class="rank">
+        <p>9位</p>
+        </div>
+        <div class="ranks_form">
+          <div class="ranks_name">
+          <p>名前</p>
+          <%= i.text_area :rank_title9 %>
+          </div>
+          <div class="ranks_text">
+          <p>説明</p>
+          <%= i.text_area :rank_text9 %>
+          <%= i.hidden_field :rank_number_id9, value: 9 %>
+        </div>
+      </div>
+
+      <div class="ranks_new">
+        <div class="rank">
+        <p>10位</p>
+        </div>
+        <div class="ranks_form">
+          <div class="ranks_name">
+          <p>名前</p>
+          <%= i.text_area :rank_title10 %>
+          </div>
+          <div class="ranks_text">
+          <p>説明</p>
+          <%= i.text_area :rank_text10 %>
+          <%= i.hidden_field :rank_number_id10, value: 10 %>
+        </div>
+      </div>
+    <% end %>
+    
+    <%= f.submit "登録する" ,class:"next" %>
   <% end %>
 </div>
