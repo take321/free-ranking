@@ -1,7 +1,7 @@
 class RanksController < ApplicationController
   def index
     @rankings = Rank.order("created_at DESC")
-    #@カテゴリーall
+    @categorys = Category.all
   end
 
   def new
