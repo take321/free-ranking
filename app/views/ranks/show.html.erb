@@ -1,0 +1,6 @@
+<% @ranks.each do |rank| %>
+  <div>
+    <p>第<%= rank.rank_number_id %>位　　　 　<%= rank.rank_title %></p>
+    <p>一言コメント　<%= rank.rank_text%></p><br>
+  <div>
+<% end %>

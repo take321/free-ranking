@@ -17,6 +17,10 @@ class RanksController < ApplicationController
     end
   end
 
+  def show
+    @ranks = RankNumber.where(rank_id: params[:id])
+  end
+
 
   private
 

@@ -12,7 +12,7 @@
     </div>
     <div class="new-ranking-category">
       <p>ランキングのカテゴリー</p>
-       <%= f.collection_select :category_id, CategoryId.all, :id, :name, {} %>
+       <%= f.collection_select :category_id, Category.all, :id, :name, {} %>
     </div>
     <div class="new-ranking-number-make">
       <p>ランキングは何位まで作りますか？</p>
