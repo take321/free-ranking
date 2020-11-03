@@ -19,7 +19,23 @@ class RanksController < ApplicationController
 
   def show
     @ranks = RankNumber.where(rank_id: params[:id])
+    @ranking = Rank.find(params[:id])
   end
+
+  # def edit　後回しにしている編集機能
+  #   @ranking = Rank.new
+  #   @ranks = RankNumber.new
+  # end
+
+  # def update
+  #   @ranking = Rank.new(ranking_edit_params)
+  #   @ranks = RankNumber.new(ranking_edit_other_params)
+  #   if @ranking.update && @ranks.update
+  #     redirect_to action: :index
+  #   else
+  #     render action: :edit
+  #   end
+  # end
 
 
   private
