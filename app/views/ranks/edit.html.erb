@@ -1,7 +1,7 @@
 <div class="new-html">
-  <h1>あなただけのランキングを作りましょう！！</h1>
-  <p>まずはランキングのタイトルと説明を決めてこのランキングのキャッチコピーを決めましょう！！</p>
-  <%= form_with(model: @ranking, url: ranks_path, local: true) do |f| %>
+  <h1>ランキング編集</h1>
+  <p>ランキングの編集をしましょう！</p>
+  <%= form_with(model: @ranking, local: true) do |f| %>
     <div class="new-ranking-title">
       <p>ランキングのタイトル</p>
       <%= f.text_area :title, class:"ranking-title", maxlength:"40" %>
@@ -14,13 +14,8 @@
       <p>ランキングのカテゴリー</p>
        <%= f.collection_select :category_id, Category.all, :id, :name, {} %>
     </div>
-    <div class="new-ranking-number-make">
-      <p>ランキングは何位まで作りますか？</p>
-      <%= f.collection_select :rank_number_ids, RankNumberId.all, :id, :name, {} %>
-    </div>
 
-
-    <%= f.fields_for :rank_numbers do |i| %>
+    <%= fields_for @ranks do |i| %>
       <div class="ranks_new">
         <div class="rank">
         <p>1位</p>

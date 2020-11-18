@@ -1,5 +1,6 @@
 <div class="main">
   <div class="ranking_list">
+  <%# （カテゴリー名）に関するカテゴリー一覧 %>
     <% @rankings.each do |ranking| %>
       <%= link_to rank_path(ranking.id) do%>
         <div class="ranking">
