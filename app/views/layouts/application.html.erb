@@ -14,7 +14,7 @@
       <%= link_to "free ranking", root_path, class: "header_icon"%>
       <% if user_signed_in? %>
         <div class="devise">
-          <%= link_to ""%>
+          <%= link_to current_user.name, user_path(current_user.id) %>
           <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
           <%= link_to "投稿する", new_rank_path, class: "post" %>
         </div>
