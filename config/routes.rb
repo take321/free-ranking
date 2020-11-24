@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   resources :ranks do
     resources :category, only: :index
   end
+  resources :users, only: :show
 end

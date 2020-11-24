@@ -1,0 +1,17 @@
+<p><%= @user.name %>のマイページ</p>
+<h1><%= @user.name %>の投稿したランキング一覧</h1>
+<% @rankings.each do |ranking| %>
+  <%= link_to rank_path(ranking.id) do%>
+    <div class="ranking">
+      <div class="ranking-img"><%= image_tag "" %></div>
+      <div class="ranking-box">
+        <div class="ranking-title">
+          <%= ranking.title %>
+        </div>
+        <div class="comment">コメント</div>
+        <p class="day"><%= l ranking.created_at %><p>
+        <p class="belong_genre"><%= ranking.category.name %></p>
+      </div>
+    </div>
+  <% end %>
+<% end %>
