@@ -11,6 +11,7 @@ class RanksController < ApplicationController
   def create
     @ranking = RankCreate.new(ranking_params)
     if @ranking.save(current_user.id)
+      empty_data_destroy
       redirect_to action: :index
     else
       render action: :new
@@ -59,5 +60,15 @@ class RanksController < ApplicationController
       rank.destroy
     end
   end
-  
+
+  def empty_data_destroy
+    rank_numbers = RankNumber.all
+    rank_numbers.each do |rank_number|
+      if rank_number.rank_title.blank? or rank_number.rank_text.blank?
+        rank_number.destroy
+      end
+    end
+    #rank_numbersテーブルの中の、rank_title,rank_textのどちらも埋まってなかった場合は削除するメソッドを書く
+  end
+
 end
